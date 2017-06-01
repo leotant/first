@@ -1,0 +1,20 @@
+
+sudo apt-get install autoconf libtool libjansson-dev libmagic-dev libssl-dev -y 
+
+wget https://github.com/plusvic/yara/archive/v3.4.0.tar.gz -O yara-3.4.0.tar.gz 
+
+tar -zxf yara-3.4.0.tar.gzcd yara-3.4.0./bootstrap.sh./configure --with-crypto --enable-cuckoo --enable-magic
+
+makesudo make install#Validate the installation:yara -v 
+
+#You should get:
+
+#yara 3.4.0cd yara-pythonpython setup.py buildsudo python setup.py install#Validate the installationpip show yara-python#INSTALL PYDEEPwget http://sourceforge.net/projects/ssdeep/files/ssdeep-2.13/ssdeep-2.13.tar.gz/download -O ssdeep-2.13.tar.gz 
+
+tar -zxf ssdeep-2.13.tar.gzcd ssdeep-2.13./configuremakesudo make install
+#Validate the installationssdeep -Vpip install pydeep#Validate that the package is installed:pip show pydeep#INSTALL VOLATILITYsudo pip install openpyxl
+sudo pip install ujsonsudo pip install pycrypto 
+sudo pip install distorm3 
+sudo pip install pytzgit clone https://github.com/volatilityfoundation/volatility.git
+
+cd volatilitypython setup.py buildpython setup.py install#Validate the installationpython vol.py -h
